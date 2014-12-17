@@ -1,0 +1,39 @@
+<html>
+
+
+<head>
+
+{% for link  in css_links %}
+<link href="{{link}}" rel="stylesheet">
+{% endfor %}
+
+</head>
+
+<body>
+
+	<div class="container">
+		<ul class="navlinks">
+			{% for link in nav_links %}
+			<a href="{{ link.url }}"><li>{{ link.text }}</li></a>
+			{% endfor %}
+			<a href="/"><li>&lt;&lt;&lt; go back</li></a>
+		</ul>
+		
+		<h1>{{ title }}</h1>
+		<span>{{ description }}</span>
+
+		<hr>
+
+		<p>
+
+		{% block content %}{% endblock %}
+
+		</p>
+
+		<hr>
+
+	</div>
+
+</body>
+
+</html>

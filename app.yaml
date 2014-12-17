@@ -1,0 +1,35 @@
+application: winged-odyssey-4
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: false
+
+
+
+# jinja2 wsgi app lives in only dynamic handler, controlling routing
+# static resources are used to deliver css, images, js
+handlers:
+
+#statics
+- url: '/images'
+  static_dir: static/images
+- url: '/css'
+  static_dir: static/css
+- url: '/js'
+  static_dir: static/js
+  
+#dynamics
+- url: /.*
+  script: scheduleMapReduce.application
+  
+  
+includes:
+- mapreduce/include.yaml
+  
+  
+
+libraries:
+- name: webapp2
+  version: latest
+- name: jinja2
+  version: latest

@@ -1,0 +1,22 @@
+{% extends "templates/main.html" %}
+{% block content %}
+
+<h3>Run Jobz</h3>
+
+
+
+		<form action="/run" method="POST" enctype="multipart/form-data">
+			<select name="blobkey">
+				{% if blobfiles %}
+					{% for blobfile in blobfiles %}
+						<option value="{{ blobfile.blobkey }}">{{ blobfile.filename }}</option>
+					{% endfor %}
+				{% endif %}
+			</select>
+			<input type="checkbox" name="confirmation" value="Confirmation">Yeah I'm sure I wanna process this records file<br/>
+			<input type="submit" name="submit" value="Submit">
+		</form>
+
+		<form action="POST" action=""></form>
+
+{% endblock %}

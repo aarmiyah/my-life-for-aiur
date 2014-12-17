@@ -1,0 +1,31 @@
+{% extends "templates/main.html" %} 
+
+{% block content %}
+
+<h3>Create entries</h3>
+
+{% if just_uploaded_blobkey %}
+
+	<div class="alert alert-success" role="alert">
+		WOW HOLY F#(#@*UJI;FLK;D) you just uploaded some data 
+		to blobstore with blobkey {{just_uploaded_blobkey}} HOLY SHIT I FUCKING CAN]T EVEN. DO IT AGAIN!!!</div>
+		
+	{% if remaining_blobspace > 0 %}
+    <div class="alert alert-info" role="alert">
+		you have {{ remaining_blobspace }} remaining uploads before i stop giving a fuck and weird things start happening</div>
+	{% else %}
+	<div class="alert alert-error" role="alert">
+		you have uploaded too many fkn blobs plz delete some with admin dude, seriously
+	</div>
+	{% endif %}
+
+{% endif %}
+
+<form action="{{ upload_url }}" method="POST"
+	enctype="multipart/form-data">
+	* Upload File: <input type="file" name="file"><br /> 
+	* File name: <input type="text" name="filename"><br />
+	<input type="submit" name="submit" value="Submit">
+</form>
+
+{% endblock %}

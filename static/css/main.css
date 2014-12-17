@@ -1,0 +1,17 @@
+ul.navlinks {
+	list-style-type: none;
+	width: 10em;
+}
+
+ul.navlinks li {
+	line-height: 2em;
+	background: #08A;
+	width: 10em;
+	font-weight: bold;
+	padding: 10px;
+	color: white;
+}
+
+ul.navlinks li:hover {
+	background:#0AC
+}
