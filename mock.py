@@ -1,4 +1,4 @@
-# mock.py
+# mock.main
 # Test tools for mocking and patching.
 # Copyright (C) 2007-2012 Michael Foord & the mock team
 # E-mail: fuzzyman AT voidspace DOT org DOT uk

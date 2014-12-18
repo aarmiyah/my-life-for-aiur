@@ -44,7 +44,7 @@ from mapreduce import util
 # pylint: disable=g-bad-name
 # pylint: disable=protected-access
 
-# Mapper pipeline is extracted only to remove dependency cycle with shuffler.py
+# Mapper pipeline is extracted only to remove dependency cycle with shuffler.main
 # Reimport it back.
 MapperPipeline = mapper_pipeline.MapperPipeline
 

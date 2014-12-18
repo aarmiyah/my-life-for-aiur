@@ -426,7 +426,7 @@ class Context(object):
     self._mutation_pool = _MutationPool(mapreduce_spec=mapreduce_spec)
     self._counters = _Counters(shard_state)
     # TODO(user): Remove this after fixing
-    # keyhole/dataeng/imagery/feeds/client_lib.py in another CL.
+    # keyhole/dataeng/imagery/feeds/client_lib.main in another CL.
     self.counters = self._counters
 
     self._pools = {}

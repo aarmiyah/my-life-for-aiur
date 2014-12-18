@@ -21,7 +21,7 @@ This module should be specified as a handler for mapreduce URLs in app.yaml:
   handlers:
   - url: /mapreduce(/.*)?
     login: admin
-    script: mapreduce/main.py
+    script: mapreduce/main.main
 """
 
 

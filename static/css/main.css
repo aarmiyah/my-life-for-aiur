@@ -15,3 +15,8 @@ ul.navlinks li {
 ul.navlinks li:hover {
 	background:#0AC
 }
+
+.whisper {
+	color: #DDD;
+	font-style: italic;
+}

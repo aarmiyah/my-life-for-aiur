@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-"""Run all tests from *_test.py files."""
+"""Run all tests from *_test.main files."""
 
 import os
 import unittest
@@ -25,20 +25,20 @@ def ModuleName(filename, base_dir):
   filename = filename.replace(base_dir, '')
   filename = filename.lstrip(os.path.sep)
   filename = filename.replace(os.path.sep, '.')
-  if filename.endswith('.py'):
+  if filename.endswith('.main'):
     filename = filename[:-3]
   return filename
 
 
 def FindTestModules():
-  """Return names of any test modules (*_test.py)."""
+  """Return names of any test modules (*_test.main)."""
   tests = []
   start_dir = os.path.dirname(os.path.abspath(__file__))
   for dir, subdirs, files in os.walk(start_dir):
     if dir.endswith('/.svn') or '/.svn/' in dir:
       continue
     tests.extend(ModuleName(os.path.join(dir, f), start_dir) for f 
-                 in files if f.endswith('_test.py'))
+                 in files if f.endswith('_test.main'))
   return tests
 
 

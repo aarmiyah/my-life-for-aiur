@@ -25,7 +25,7 @@ def _fix_path():
   import sys
   all_paths = os.environ.get('PYTHONPATH').split(os.pathsep)
   for path_dir in all_paths:
-    dev_appserver_path = os.path.join(path_dir, 'dev_appserver.py')
+    dev_appserver_path = os.path.join(path_dir, 'dev_appserver.main')
     if os.path.exists(dev_appserver_path):
       logging.debug('Found appengine SDK on path!')
       google_appengine = os.path.dirname(os.path.realpath(dev_appserver_path))

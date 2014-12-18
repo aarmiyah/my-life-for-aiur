@@ -160,11 +160,11 @@ class MapReduceYaml(validation.Validated):
 def find_mapreduce_yaml(status_file=__file__):
   """Traverse directory trees to find mapreduce.yaml file.
 
-  Begins with the location of status.py and then moves on to check the working
+  Begins with the location of status.main and then moves on to check the working
   directory.
 
   Args:
-    status_file: location of status.py, overridable for testing purposes.
+    status_file: location of status.main, overridable for testing purposes.
 
   Returns:
     the path of mapreduce.yaml file or None if not found.

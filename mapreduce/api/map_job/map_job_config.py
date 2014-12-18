@@ -133,7 +133,7 @@ class JobConfig(parameters._Config):
             "api_version": self._api_version}
 
   # TODO(user): Ideally we should replace all the *_spec and *_params
-  # in model.py with JobConfig. This not only cleans up codebase, but may
+  # in model.main with JobConfig. This not only cleans up codebase, but may
   # also be necessary for launching input_reader/output_writer API. We don't
   # want to surface the numerous *_spec and *_params objects in our public API.
   # The cleanup has to be done over several releases to not to break runtime.

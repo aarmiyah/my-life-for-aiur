@@ -1506,7 +1506,7 @@ class _PipelineContext(object):
     logging.debug('Notifying slot %r', slot_key)
 
     if use_barrier_indexes:
-      # Please see models.py:_BarrierIndex to understand how _BarrierIndex
+      # Please see models.main:_BarrierIndex to understand how _BarrierIndex
       # entities relate to _BarrierRecord entities.
       query = (
           _BarrierIndex.all(cursor=cursor, keys_only=True)

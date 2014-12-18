@@ -2,7 +2,7 @@ application: winged-odyssey-4
 version: 1
 runtime: python27
 api_version: 1
-threadsafe: false
+threadsafe: true
 
 
 
@@ -10,7 +10,7 @@ threadsafe: false
 # static resources are used to deliver css, images, js
 handlers:
 
-#statics
+# statics
 - url: '/images'
   static_dir: static/images
 - url: '/css'
@@ -18,11 +18,21 @@ handlers:
 - url: '/js'
   static_dir: static/js
   
-#dynamics
+# mapreduce stuff
+- url: /_ah/pipeline.*
+  script: mapreduce.lib.pipeline.handlers._APP
+  login: admin
+  
+# endpoints
+- url: /_ah/spi/.*
+  script: schedulrApp.web.api.application
+
+# webapp2 route handlers
 - url: /.*
-  script: scheduleMapReduce.application
+  script: schedulrApp.web.handlers.application
   
-  
+
+
 includes:
 - mapreduce/include.yaml
   
@@ -33,3 +43,7 @@ libraries:
   version: latest
 - name: jinja2
   version: latest
+- name: pycrypto
+  version: latest
+- name: endpoints
+  version: 1.0

@@ -1,0 +1,29 @@
+{% extends "templates/main.html" %} 
+
+
+
+{% block content %}
+
+{% if not job_finished %}
+<h3>Internet Tubes and Pipelines are processing your breadloaf...</h3>
+<span class="whisper">isn't it exciting?</span>
+{% else %}
+
+{% endif %}
+
+<p>
+<img src="images/bread_waiting.jpg" width="200"><br/>
+{% if job_finished %}
+<img src="images/bread_success.jpg" width="200">
+{% endif %}
+<p>
+
+<p>
+Your pipeline ID is {{ pipeline_id }}, <a href="{{ pipeline_base_path }}/status?root={{ pipeline_id }}">and can be monitored here</a>
+</p>
+
+{% endblock %} 
+
+
+
+

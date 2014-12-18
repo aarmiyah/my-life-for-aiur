@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-"""Tests for common.py."""
+"""Tests for common.main."""
 
 import warnings
 

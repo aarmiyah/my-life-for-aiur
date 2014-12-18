@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-"""Tests for line_chart.py."""
+"""Tests for line_chart.main."""
 
 import warnings
 
